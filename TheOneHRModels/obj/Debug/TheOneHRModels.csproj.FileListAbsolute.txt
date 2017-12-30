@@ -1,0 +1,5 @@
+C:\CSharpProjects\TheOneHR\TheOneHRModels\bin\Debug\TheOneHRModels.dll
+C:\CSharpProjects\TheOneHR\TheOneHRModels\bin\Debug\TheOneHRModels.pdb
+C:\CSharpProjects\TheOneHR\TheOneHRModels\obj\Debug\TheOneHRModels.csprojResolveAssemblyReference.cache
+C:\CSharpProjects\TheOneHR\TheOneHRModels\obj\Debug\TheOneHRModels.dll
+C:\CSharpProjects\TheOneHR\TheOneHRModels\obj\Debug\TheOneHRModels.pdb

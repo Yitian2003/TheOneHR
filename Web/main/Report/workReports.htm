@@ -1,0 +1,70 @@
+﻿
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+	<head>
+
+		<title>统计报表</title>
+		<script type="text/javascript"
+			src="my97datapicker/WdatePicker.js"></script>
+		<meta name="author" content="Wk">
+		<meta name="robots" content="all">
+		<meta name="keywords" content="keyword">
+		<meta name="description" content="Wk Java Server Pages">
+		<meta http-equiv="keywords" content="keyword">
+		<meta http-equiv="description" content="Wk Java Server Pages">
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<meta http-equiv="windows-Target" content="_top">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" href="http://localhost:8888/TheOneHR/css/common.css"
+			type="text/css" />
+
+	</head>
+
+	<body>
+		<div id="man_zone" style="width:101%;">
+			<form name="myform" action="sysFreeChart.do" method="post">
+				<table width="99%" border="0" align="center" cellpadding="3"
+					cellspacing="1" class="table_style">
+					<thead>
+						<tr>
+							<td class="left_title_header">
+								报表选择
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr>
+							<td width="100%" class="left_title_2" style="text-align: center;">
+								<input type="hidden" name="op" value="doFreeChart" />
+								<input type="radio" value="1" name="myradio" checked="checked" />
+								系统角色分布图
+								<br />
+								<input type="radio" value="2" name="myradio" />
+								工作类型分布图
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr bgcolor="#FFFFFF">
+							<td class="left_title_footer" colspan="3"
+								style="text-align: center;">
+								<input type="submit" value="提交" class="input_button" />
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+	</body>
+
+</html>
+

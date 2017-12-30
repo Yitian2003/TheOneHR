@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneHRModels", "TheOneHRModels\TheOneHRModels.csproj", "{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneHRDAL", "TheOneHRDAL\TheOneHRDAL.csproj", "{7D90D264-8EAE-4A77-B83E-41086CA53FC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneHRBLL", "TheOneHRBLL\TheOneHRBLL.csproj", "{67385CFC-DCED-4A16-B1D2-A9D295D0D15A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{A97600FD-1825-4C7D-83D0-174232C6B246}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{67385cfc-dced-4a16-b1d2-a9d295d0d15a}|TheOneHRBLL.dll;{7D90D264-8EAE-4A77-B83E-41086CA53FC2}|TheOneHRDAL.dll;{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}|TheOneHRModels.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62117"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62117\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62117"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62117\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62117"
+		SlnRelativePath = "Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A05BE5F-6072-46B9-8DD5-E4E24FABF88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D90D264-8EAE-4A77-B83E-41086CA53FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D90D264-8EAE-4A77-B83E-41086CA53FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D90D264-8EAE-4A77-B83E-41086CA53FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D90D264-8EAE-4A77-B83E-41086CA53FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67385CFC-DCED-4A16-B1D2-A9D295D0D15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67385CFC-DCED-4A16-B1D2-A9D295D0D15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67385CFC-DCED-4A16-B1D2-A9D295D0D15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67385CFC-DCED-4A16-B1D2-A9D295D0D15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97600FD-1825-4C7D-83D0-174232C6B246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97600FD-1825-4C7D-83D0-174232C6B246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97600FD-1825-4C7D-83D0-174232C6B246}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97600FD-1825-4C7D-83D0-174232C6B246}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

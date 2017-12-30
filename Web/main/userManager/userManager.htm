@@ -1,0 +1,414 @@
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>用户列表</title>
+		
+
+		<script type='text/javascript'
+			src='/TheOneHR/dwr/interface/JSysUser.js'></script>
+		<script type='text/javascript' src='/TheOneHR/dwr/engine.js'></script>
+		<script type='text/javascript' src='/TheOneHR/dwr/util.js'></script>
+		<script type="text/javascript">
+		function findObj(obj){
+			if (Validator.Validate(document.forms[0],3)){
+				var oListDiv = $("listDiv");
+				var oRole = document.getElementsByName("sysUser.sysRole.roleId")[0];
+				if(obj.value!=null&&obj.value!=""){
+					JSysUser.querySysUserByUserName(obj.value,oRole.value,callback);
+				}else{
+					oListDiv.style.display="none";
+				}
+			}
+		}
+		function callback(data){
+			var oListDiv = $("listDiv");   //document.getElementById("listDiv");
+			if(data.length>0){
+				var str = "";
+				var oLength = data.length<=9?data.length:9;
+				for(var i=0;i<oLength;i++){
+					str += "<div style='border-bottom:1px dashed #cccccc' onclick='getUserValue(this)' onmouseover='doMouseOver(this)' onmouseout='doMouseOut(this)'>"+data[i]+"</div>";
+				}
+				
+				
+				
+				oListDiv.style.display="block";
+				oListDiv.innerHTML = str;
+			}else{
+				oListDiv.style.display="none";
+			}
+		}
+		
+		function doMouseOver(obj){
+			obj.style.cursor="hand";
+			obj.style.backgroundColor="#C2CBCF";
+		}
+		
+		function doMouseOut(obj){
+			obj.style.cursor="defalut";
+			obj.style.backgroundColor="";
+		}
+		
+		function getUserValue(obj){
+			var oListDiv = $("listDiv");
+			document.getElementsByName("sysUser.userLoginName")[0].value = obj.innerHTML;
+			oListDiv.style.display="none";
+		}
+		
+		function divNone(){
+			var oListDiv = $("listDiv");
+			oListDiv.style.display="none";
+		}
+		var varFocus;
+		function toKeyDown(){
+			var oInput = document.getElementsByName("sysUser.userLoginName")[0];
+			var oSrc = event.srcElement;
+			var oListDiv = $("listDiv");
+			if(oListDiv.style.display == "none"){
+				return;
+			}
+			
+			if(oSrc){
+				if(oSrc.name=="sysUser.userLoginName"){
+					if(event.keyCode==40){
+						if(oListDiv.childNodes.length>0){
+							oSrc.blur();
+							oListDiv.focus();
+							oListDiv.childNodes[0].style.backgroundColor="#C2CBCF";
+							varFocus = 0;
+						}
+					}
+				}else if(oSrc.id=="listDiv"){
+					if(varFocus ===0){
+						if(event.keyCode == 38){
+							oInput.focus();
+							return ;
+						}
+					}
+					if(event.keyCode == 40){
+						for(var i=0;i<oListDiv.childNodes.length;i++){
+							if(varFocus === i && varFocus !==oListDiv.childNodes.length-1){
+								oListDiv.childNodes[i].style.backgroundColor="";
+								oListDiv.childNodes[i+1].style.backgroundColor="#C2CBCF";
+							}
+						}
+						varFocus = varFocus + 1;
+					}
+					if(event.keyCode == 38){
+						for(var j=oListDiv.childNodes.length-1;j>=0;j--){
+							if(varFocus ===j 	){
+								oListDiv.childNodes[j].style.backgroundColor="";
+								oListDiv.childNodes[j-1].style.backgroundColor="#C2CBCF";
+							}
+					}
+						varFocus = varFocus -1;
+					}
+				
+					if(varFocus > oListDiv.childNodes.length-1){
+					 varFocus = oListDiv.childNodes.length-1;
+					}
+					
+					if(event.keyCode == 13){
+						oInput.value = oListDiv.childNodes[varFocus].innerHTML;
+						event.returnValue = false;
+						varFocus = null;
+						oListDiv.style.display = "none";
+					}
+				}
+			}
+		}
+		</script>
+		<meta name="author" content="Wk">
+		<meta name="robots" content="all">
+		<meta name="keywords" content="keyword">
+		<meta name="description" content="Wk Java Server Pages">
+		<meta http-equiv="keywords" content="keyword">
+		<meta http-equiv="description" content="Wk Java Server Pages">
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<meta http-equiv="windows-Target" content="_top">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" href="http://localhost:8888/TheOneHR/css/common.css"
+			type="text/css" />
+	</head>
+	<body onkeydown="toKeyDown();">
+		<div id="man_zone">
+			<form name="sysUserForm" method="post" action="/TheOneHR/sysUser.do">
+				<table width="70%" border="0" align="center" cellpadding="3"
+					cellspacing="1" class="table_style">
+					<thead>
+						<tr>
+							<td class="left_title_header" colspan="2">
+								用户查询
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td width="40%" class="left_title_2" style="text-align: center;">
+								用户角色
+							</td>
+							<td width="60%" class="left_title_2" style="text-align: left;">
+								
+									<select name="sysUser.sysRole.roleId" style="width:153px;"><option value="">全部</option>
+										<option value="2">人事经理</option>
+<option value="3">人事专员</option>
+<option value="4">招聘专员</option>
+<option value="5">招聘经理</option>
+<option value="6">应聘者</option>
+<option value="9">测试角色</option>
+<option value="10">薪酬专员</option>
+<option value="11">薪酬经理</option></select>
+								
+							</td>
+						</tr>
+						<tr>
+							<td width="40%" class="left_title_2" style="text-align: center;">
+								用户名称
+							</td>
+							<td width="60%" class="left_title_2" style="text-align: left;">
+								<input type="text" name="sysUser.userLoginName" maxlength="8" value="" onkeyup="findObj(this);" class="input_text">
+							</td>
+						</tr>
+						<tr>
+							<td width="40%" class="left_title_2" style="text-align: center;">
+							</td>
+							<td width="60%" class="left_title_2" style="text-align: left;">
+								<div id="listDiv"
+									style="position:absolute;border:1px solid #cccccc;background:white;color:black;width:153px;display:none;"></div>
+							</td>
+						</tr>
+
+						
+					</tbody>
+					<tfoot>
+						<tr bgcolor="#FFFFFF">
+							<td class="left_title_1" colspan="2"
+								style="text-align: left;padding-left:40%;">
+								<input type="button" value="查询" class="input_button"
+									onclick="formSubmit();" />
+								<input type="button" value="清除" class="input_button"
+									onclick="formReset();" />
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				<hr width="99%" style="height:1px;color:#70C1FF"/>
+				<table width="99%" border="0" align="center" cellpadding="3"
+					cellspacing="1" class="table_style">
+					<thead>
+						<tr>
+							<td class="left_title_header">
+								序号
+							</td>
+							<td class="left_title_header">
+								用户名称
+							</td>
+							<td class="left_title_header">
+								用户角色
+							</td>
+							<td class="left_title_header">
+								<input type="button" value="新增" class="input_button"
+									onclick="window.location='http://localhost:8888/TheOneHR/main/userManager/addUser.htm'" />
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						
+							
+								<tr>
+									<td width="10%" class="left_title_2"
+										style="text-align: center;">
+										1
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										xcjl
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										薪酬经理
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										<a href="http://localhost:8888/TheOneHR/main/userManager/editUser.htm">编辑</a>
+										<a href="sysUser.do?op=doDelUser&userId=9"
+											onclick="return confirm('确定要删除吗?');">删除</a>
+									</td>
+								</tr>
+							
+								<tr>
+									<td width="10%" class="left_title_2"
+										style="text-align: center;">
+										2
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										xczy
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										薪酬专员
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										<a href="sysUser.do?op=toEditUser&userId=8">编辑</a>
+										<a href="sysUser.do?op=doDelUser&userId=8"
+											onclick="return confirm('确定要删除吗?');">删除</a>
+									</td>
+								</tr>
+							
+								<tr>
+									<td width="10%" class="left_title_2"
+										style="text-align: center;">
+										3
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										test
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										测试角色
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										<a href="sysUser.do?op=toEditUser&userId=7">编辑</a>
+										<a href="sysUser.do?op=doDelUser&userId=7"
+											onclick="return confirm('确定要删除吗?');">删除</a>
+									</td>
+								</tr>
+							
+								<tr>
+									<td width="10%" class="left_title_2"
+										style="text-align: center;">
+										4
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										zyjl
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										招聘经理
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										<a href="sysUser.do?op=toEditUser&userId=6">编辑</a>
+										<a href="sysUser.do?op=doDelUser&userId=6"
+											onclick="return confirm('确定要删除吗?');">删除</a>
+									</td>
+								</tr>
+							
+								<tr>
+									<td width="10%" class="left_title_2"
+										style="text-align: center;">
+										5
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										zpzy
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										招聘专员
+									</td>
+									<td width="30%" class="left_title_2"
+										style="text-align: center;">
+										<a href="sysUser.do?op=toEditUser&userId=5">编辑</a>
+										<a href="sysUser.do?op=doDelUser&userId=5"
+											onclick="return confirm('确定要删除吗?');">删除</a>
+									</td>
+								</tr>
+							
+						
+					</tbody>
+					<tfoot>
+						<tr bgcolor="#FFFFFF">
+							<td class="left_title_footer" colspan="4"
+								style="text-align: right;">
+								<input type="hidden" name="op" value="toShowUser" />
+								
+
+<!-- 分页 -->
+<script type="text/javascript" src="http://localhost:8888/TheOneHR/pager/wkpager.js"></script>
+<input type="hidden" name="wkPage.totalPages" value="2">
+<input type="hidden" name="wkPage.totalObjects" value="8">
+<input type="hidden" name="wkPage.pageIndex" value="1">
+
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr class="left_title_footer" style="background-color: #F3F8F7;">
+		<td>
+			每页显示
+			<input type="text" name="wkPage.pageSize" maxlength="2" size="2" value="5" onkeydown="return checkNumkey(this)" style="height:18px;" class="input_text">
+			条 &nbsp;&nbsp;当前
+			<script>
+							var oIndex = document.getElementsByName('wkPage.pageIndex')[0].value;
+							var oTotalPages = document.getElementsByName('wkPage.totalPages')[0].value;
+							var oTotalObjects = document.getElementsByName('wkPage.totalObjects')[0].value;
+							document.write(oIndex+'/'+oTotalPages+'页 共'+oTotalObjects);</script>
+			条记录 &nbsp;&nbsp;
+			<a href="#" onClick="page_GoFirst()" style="cursor=hand" title="首页">首页</a>&nbsp;&nbsp;
+			<a href="#" onClick="page_GoPre()" style="cursor=hand" title="上一页">上一页</a>&nbsp;&nbsp;
+			<a href="#" onClick="page_GoNext()" style="cursor=hand" title="下一页">下一页</a>&nbsp;&nbsp;
+			<a href="#" onClick="page_GoEnd()" style="cursor=hand" title="尾页">尾页</a>&nbsp;&nbsp;
+			第
+			<input type="text" name="wkPage.pageIndex" maxlength="2" size="2" value="1" onkeydown="return checkNumkey(this)" style="height:18px;" class="input_text">
+			页
+			<input type="hidden" name="wkPage.pageSize" value="5">
+			<input type="button" class="input_button" value="Go"
+				onclick="page_GoPage();" />
+			<div style="display: none;">
+				<input type="submit" id="mySubmit" class="input_button" value="Go" />
+			</div>
+		</td>
+	</tr>
+</table>
+<!-- 分页 -->
+
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="http://localhost:8888/TheOneHR/js/validate2.js"></script>
+	<script type="text/javascript">
+build_validate("sysUser.userLoginName","","WkCENNull");
+function jsCheckForm(){
+	if (Validator.Validate(document.forms[0],3)){
+		return true;
+	}
+	return false;
+}
+function formSubmit(){
+	if(jsCheckForm()){
+		document.forms[0].submit();
+	}
+}
+function formReset(){
+	var userLoginName = document.getElementsByName("sysUser.userLoginName")[0];
+	var oRole = document.getElementsByName("sysUser.sysRole.roleId")[0];
+	if(userLoginName&&oRole){
+		userLoginName.value="";
+		oRole.value="";
+		userLoginName.focus();
+	}
+}
+window.onload=function(){
+	var userLoginName = document.getElementsByName("sysUser.userLoginName")[0];
+	if(userLoginName)
+		userLoginName.focus();
+}
+</script>
+</html>
+

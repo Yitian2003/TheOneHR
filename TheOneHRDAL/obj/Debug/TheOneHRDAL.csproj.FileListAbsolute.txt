@@ -1,0 +1,7 @@
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\bin\Debug\TheOneHRDAL.dll
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\bin\Debug\TheOneHRDAL.pdb
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\bin\Debug\TheOneHRModels.dll
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\bin\Debug\TheOneHRModels.pdb
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\obj\Debug\TheOneHRDAL.csprojResolveAssemblyReference.cache
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\obj\Debug\TheOneHRDAL.dll
+C:\CSharpProjects\TheOneHR\TheOneHRDAL\obj\Debug\TheOneHRDAL.pdb

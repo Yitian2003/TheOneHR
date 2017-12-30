@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+	<head>
+
+		<title>设置角色权限</title>
+		<meta name="author" content="Wk">
+		<meta name="robots" content="all">
+		<meta name="keywords" content="keyword">
+		<meta name="description" content="Wk Java Server Pages">
+		<meta http-equiv="keywords" content="keyword">
+		<meta http-equiv="description" content="Wk Java Server Pages">
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<meta http-equiv="windows-Target" content="_top">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" href="http://localhost:8088/TheOneHR/css/common.css"
+			type="text/css" />
+		<link href="http://localhost:8088/TheOneHR/dtree/dtree.css" type="text/css">
+		<script type="text/javascript" src="http://localhost:8088/TheOneHR/dtree/dtree.js"></script>
+
+	</head>
+
+	<body>
+		<div id="man_zone" style="height: auto;width: 101%;">
+			<form action="sysRoleright.do?op=doSysFun&roleId=11" method="post" name="testForm">
+				<table width="99%" border="0" align="center" cellpadding="3"
+					cellspacing="1" class="table_style">
+					<thead>
+						<tr>
+							<td class="left_title_header" colspan="2">
+								编辑权限
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td width="99%" class="left_title_2"
+								style="text-align: left;padding-left:44%;">
+								<script type="text/javascript">
+									var d = new dTree("d","http://localhost:8088/TheOneHR/dtree","testForm");
+									d.add('0','-1','薪酬经理权限设置');
+									d.add('ROOT_MENU','0','全选');
+									
+										d.add('L01','ROOT_MENU','系统设置','','L01','','','','','2');
+									
+										d.add('L0101','L01','权限管理','','L0101','','','','','2');
+									
+										d.add('L0102','L01','机构管理','','L0102','','','','','2');
+									
+										d.add('L010201','L0102','一级机构管理','','L010201','','','','','2');
+									
+										d.add('L010202','L0102','二级机构管理','','L010202','','','','','2');
+									
+										d.add('L010203','L0102','三级机构管理','','L010203','','','','','2');
+									
+										d.add('L0103','L01','用户管理','','L0103','','','','','2');
+									
+										d.add('L0104','L01','报表','','L0104','','','','','2');
+									
+										d.add('L02','ROOT_MENU','调动管理','','L02','','','','','2');
+									
+										d.add('L0201','L02','调动登记','','L0201','','','','','2');
+									
+										d.add('L0202','L02','调动审核','','L0202','','','','','2');
+									
+										d.add('L03','ROOT_MENU','薪酬管理','','L03','','','','','1');
+									
+										d.add('L0301','L03','薪酬标准','','L0301','','','','','1');
+									
+										d.add('L030101','L0301','薪酬标准登记','','L030101','','','','','1');
+									
+										d.add('L030102','L0301','薪酬标准复核','','L030102','','','','','1');
+									
+										d.add('L030103','L0301','薪酬标准查询','','L030103','','','','','1');
+									
+										d.add('L0302','L03','薪酬发放','','L0302','','','','','1');
+									
+										d.add('L030201','L0302','薪酬发放登记','','L030201','','','','','1');
+									
+										d.add('L030202','L0302','薪酬发放复核','','L030202','','','','','1');
+									
+										d.add('L030203','L0302','薪酬发放查询','','L030203','','','','','1');
+									
+										d.add('L04','ROOT_MENU','档案管理','','L04','','','','','2');
+									
+										d.add('L0401','L04','档案删除','','L0401','','','','','2');
+									
+										d.add('L0402','L04','档案登记','','L0402','','','','','2');
+									
+										d.add('L0403','L04','档案复核','','L0403','','','','','2');
+									
+										d.add('L0404','L04','档案查询','','L0404','','','','','2');
+									
+										d.add('L05','ROOT_MENU','招聘管理','','L05','','','','','2');
+									
+										d.add('L0501','L05','考试管理','','L0501','','','','','2');
+									
+										d.add('L050101','L0501','考试出题','','L050101','','','','','2');
+									
+										d.add('L050102','L0501','考试答题','','L050102','','','','','2');
+									
+										d.add('L050103','L0501','成绩查询','','L050103','','','','','2');
+									
+										d.add('L0502','L05','题库管理','','L0502','','','','','2');
+									
+										d.add('L050201','L0502','试题登记','','L050201','','','','','2');
+									
+										d.add('L050202','L0502','试题查询','','L050202','','','','','2');
+									
+										d.add('L0503','L05','面试管理','','L0503','','','','','2');
+									
+										d.add('L050301','L0503','面试审核','','L050301','','','','','2');
+									
+										d.add('L050302','L0503','面试登记','','L050302','','','','','2');
+									
+										d.add('L0504','L05','简历管理','','L0504','','','','','2');
+									
+										d.add('L050401','L0504','简历登记','','L050401','','','','','2');
+									
+										d.add('L050402','L0504','简历查询','','L050402','','','','','2');
+									
+										d.add('L0505','L05','录用管理','','L0505','','','','','2');
+									
+										d.add('L050501','L0505','录用申请','','L050501','','','','','2');
+									
+										d.add('L050502','L0505','录用审核','','L050502','','','','','2');
+									
+										d.add('L050503','L0505','录用结果','','L050503','','','','','2');
+									
+										d.add('L0506','L05','职位发布','','L0506','','','','','2');
+									
+										d.add('L050601','L0506','职位发布登记','','L050601','','','','','2');
+									
+										d.add('L050602','L0506','职位发布变更','','L050602','','','','','2');
+									
+										d.add('L050603','L0506','职位发布查询','','L050603','','','','','2');
+									
+									document.write(d);
+								</script>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td class="left_title_1" colspan="2" style="text-align: center;">
+								<input type="button" value="提交" class="input_button" onclick="formSubmit();"/>
+								<input type="button" value="返回" class="input_button"
+									onclick="window.history.go(-1);" />
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+	</body>
+<script type="text/javascript">
+function formSubmit(){
+	if(confirm('确定提交吗?'))
+		document.forms[0].submit();
+}
+</script>
+</html>
+
