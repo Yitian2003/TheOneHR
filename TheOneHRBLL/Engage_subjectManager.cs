@@ -34,5 +34,21 @@ namespace TheOneHRBLL
         {
             return Engage_subjectService.DelEngage_subject(id) > 0;
         }
+
+        public static IList<Engage_subject> SearchEngage_subjectAdv(int categoryId, string key, string startTime, string endTime)
+        {
+            string codition = " 1=1 ";
+
+            if(categoryId != -1)
+            {
+                codition += "Cqsk_No=" + categoryId;
+            }
+
+            if(key != "")
+            {
+                codition += string.Format(" and Context like '%{0}%' or")
+            }
+        }
+       
     }
 }

@@ -85,5 +85,10 @@ namespace TheOneHRDAL
             return DBHelper.ExecuteNonQuery(sql);
         }
         
+        public static IList<Engage_subject> SearchEngage_subjectAdv(string condition)
+        {
+            string sql = string.Format("select * from Engage_subject where '{0}'", condition);
+            return GetEngage_subjectBySQL(sql);
+        }
     }
 }
