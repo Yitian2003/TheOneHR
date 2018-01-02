@@ -37,17 +37,30 @@ namespace TheOneHRBLL
 
         public static IList<Engage_subject> SearchEngage_subjectAdv(int categoryId, string key, string startTime, string endTime)
         {
-            string codition = " 1=1 ";
+            string condition = " 1=1 ";
 
             if(categoryId != -1)
             {
-                codition += "Cqsk_No=" + categoryId;
+                condition += " and Cqsk_No=" + categoryId;
             }
 
-            if(key != "")
+            if(!string.IsNullOrEmpty(key))
             {
-                codition += string.Format(" and Context like '%{0}%' or")
+                condition += string.Format(" and Context like '%{0}%' or Users_name like '%{0}%' or Derivation like '%{0}%'", key);
             }
+
+            if(!string.IsNullOrEmpty(startTime))
+            {
+                if(!string.IsNullOrEmpty(endTime))
+                {
+                    condition += string.Format(" and Regist_time between '{0}' and '{1}'", startTime + " 00:00:00", endTime + " 23:59:59");
+                }
+                else
+                {
+                    condition += string.Format(" and Regist_time > '{0}'", startTime + " 00:00:00");
+                }
+            }
+            return Engage_subjectService.SearchEngage_subjectAdv(condition);
         }
        
     }

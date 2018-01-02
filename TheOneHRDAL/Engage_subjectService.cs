@@ -25,7 +25,7 @@ namespace TheOneHRDAL
                     subject.Id = int.Parse(dataTable.Rows[i]["Id"].ToString());
                     subject.Cqsk_No = Config_question_second_kindService.GetConfig_question_second_kindById(int.Parse(dataTable.Rows[i]["Cqsk_No"].ToString()));
                     subject.Register_users_No = UserInfoService.GetUserById(int.Parse(dataTable.Rows[i]["Register_users_No"].ToString()));
-                    subject.Changer_users_No = int.Parse(dataTable.Rows[i]["Changer_users_No"].ToString());
+                    subject.Changer_users_No = string.IsNullOrEmpty(dataTable.Rows[i]["Changer_users_No"].ToString()) ? (int?)null : int.Parse(dataTable.Rows[i]["Changer_users_No"].ToString());
                     
                     subject.Regist_time = string.IsNullOrEmpty(dataTable.Rows[i]["Regist_time"].ToString()) ? (DateTime?)null : DateTime.Parse(dataTable.Rows[i]["Regist_time"].ToString());
                     subject.Change_time = string.IsNullOrEmpty(dataTable.Rows[i]["Change_time"].ToString()) ? (DateTime?)null : DateTime.Parse(dataTable.Rows[i]["Change_time"].ToString());
@@ -87,7 +87,7 @@ namespace TheOneHRDAL
         
         public static IList<Engage_subject> SearchEngage_subjectAdv(string condition)
         {
-            string sql = string.Format("select * from Engage_subject where '{0}'", condition);
+            string sql = string.Format("select [Id], [Cqsk_No], [Register_users_No], [Changer_users_No], [Regist_time], [Change_time], [Derivation], [Context], [Key_a], [Key_b], [Key_c], [Key_d], [Key_e], [Correct_key] from v_EngageSubject where {0}", condition);
             return GetEngage_subjectBySQL(sql);
         }
     }

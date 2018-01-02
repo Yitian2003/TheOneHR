@@ -17,12 +17,13 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link rel="stylesheet" href="/Web/css/common.css"
+    <link rel="stylesheet" href="/css/common.css"
         type="text/css" />
-    <link type="text/css" rel="stylesheet" href="cal/calendar-system.css" />
-    <script type="text/javascript" src="cal/calendar.js"></script>
-    <script type="text/javascript" src="cal/calendar-en.js"></script>
-    <script language="JavaScript" src="cal/calShow.js"></script>
+    <link type="text/css" rel="stylesheet" href="/cal/calendar-system.css" />
+    <script type="text/javascript" src="/cal/calenderJS.js"></script>
+    <script type="text/javascript" src="/cal/calendar.js"></script>
+    <script type="text/javascript" src="/cal/calendar-en.js"></script>
+    <script type="JavaScript" src="/cal/calShow.js"></script>
     <script type="text/javascript" src="json.js"></script>
     <script type="text/javascript">
         //二级试题二级级联
@@ -152,11 +153,14 @@
 
                     </tr>
                     <tr>
-                        <td class="left_title_2" style="text-align: left;">&nbsp;<asp:DropDownList ID="ddlCategory1" runat="server">
+                        <td class="left_title_2" style="text-align: left;">&nbsp;<asp:DropDownList ID="ddlCategory1" runat="server" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="odsCategory1" DataTextField="First_kind_name" DataValueField="Id" OnSelectedIndexChanged="ddlCategory1_SelectedIndexChanged">
+                            <asp:ListItem Value="-1">Choose...</asp:ListItem>
                         </asp:DropDownList>
+                            <asp:ObjectDataSource ID="odsCategory1" runat="server" SelectMethod="GetAllConfig_question_first_kinds" TypeName="TheOneHRBLL.Config_question_first_kindManager"></asp:ObjectDataSource>
                         </td>
                         <td class="left_title_2" style="text-align: left;">
                             <asp:DropDownList ID="ddlCategory2" runat="server">
+                                <asp:ListItem Value="-1">Choose...</asp:ListItem>
                             </asp:DropDownList>
                             &nbsp;</td>
                     </tr>
@@ -172,7 +176,7 @@
                         <td class="left_title_2" style="text-align: center;">登记时间
                         </td>
                         <td class="left_title_2" style="text-align: left;">
-                            <input type="text" id="beginTime" value="" onclick="cHS_setDate(this);" readonly="readonly" class="input_text" runat="server">
+                            <input type="text" id="beginTime" value="" onclick="HS_setDate(this);" readonly="readonly" class="input_text" runat="server">
                         </td>
                         <td class="left_title_2" style="text-align: left;">
                             <input type="text" id="endTime" value="" onclick="HS_setDate(this);" readonly="readonly" class="input_text" runat="server">
@@ -183,7 +187,7 @@
                 <tfoot>
                     <tr bgcolor="#FFFFFF">
                         <td class="left_title_1" colspan="5" style="text-align: center;">
-                            <asp:Button ID="btnSearch" Text="查询" CssClass="input_button" runat="server" />
+                            <asp:Button ID="btnSearch" Text="查询" CssClass="input_button" runat="server" OnClick="btnSearch_Click" />
 
                             <input type="button" onclick="clearTerm();" value="清除" class="input_button" />
                         </td>
@@ -194,8 +198,44 @@
 
             <br />
 
-            <asp:GridView ID="gvExam" runat="server" CssClass="GridView" Width="90%" align="center">
+            <asp:GridView ID="gvExam" runat="server" CssClass="GridView" Width="90%" align="center" AutoGenerateColumns="False" DataSourceID="odsEngageSubject" AllowPaging="True" PageSize="5">
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="序号" SortExpression="Id" />
+                    <asp:BoundField DataField="Context" HeaderText="题干" SortExpression="Context" />
+                    <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="试题I级分类" SortExpression="Cqsk_No">
+                        <EditItemTemplate>
+                            <asp:DynamicControl ID="DynamicControl1" runat="server" DataField="Cqsk_No" Mode="Edit" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Cqsk_No.Cqfk_no.First_kind_name") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="试题II级分类" SortExpression="Cqsk_No">
+                        <EditItemTemplate>
+                            <asp:DynamicControl ID="DynamicControl2" runat="server" DataField="Cqsk_No" Mode="Edit" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Cqsk_No.Second_kind_name") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="Derivation" HeaderText="出处" SortExpression="Derivation" />
+                    <asp:BoundField DataField="Correct_key" HeaderText="正确答案" SortExpression="Correct_key" />
+                    <asp:TemplateField HeaderText="操作">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="linkModify" runat="server" CommandArgument='<%# Eval("Id") %>' OnCommand="linkModify_Command">修改</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
             </asp:GridView>
+
+            <asp:ObjectDataSource ID="odsEngageSubject" runat="server" SelectMethod="SearchEngage_subjectAdv" TypeName="TheOneHRBLL.Engage_subjectManager">
+                <SelectParameters>
+                    <asp:Parameter Name="categoryId" Type="Int32" DefaultValue="-1" />
+                    <asp:Parameter Name="key" Type="String" />
+                    <asp:Parameter Name="startTime" Type="String" />
+                    <asp:Parameter Name="endTime" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
 
         </form>
     </div>
