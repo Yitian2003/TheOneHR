@@ -40,15 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config_country.cs" />
+    <Compile Include="Config_educated_degree.cs" />
     <Compile Include="Config_file_first_kind.cs" />
     <Compile Include="Config_file_second_kind.cs" />
     <Compile Include="Config_file_third_kind.cs" />
+    <Compile Include="Config_goodat.cs" />
     <Compile Include="Config_major.cs" />
     <Compile Include="Config_major_kind.cs" />
+    <Compile Include="Config_nation.cs" />
+    <Compile Include="Config_post.cs" />
     <Compile Include="Config_question_first_kind.cs" />
     <Compile Include="Config_question_second_kind.cs" />
+    <Compile Include="Config_religion.cs" />
+    <Compile Include="Config_speciality.cs" />
+    <Compile Include="Engage_interview.cs" />
     <Compile Include="Engage_major_release.cs" />
+    <Compile Include="Engage_resume.cs" />
     <Compile Include="Engage_subject.cs" />
+    <Compile Include="Human_file.cs" />
     <Compile Include="Sys_right.cs" />
     <Compile Include="Sys_role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
