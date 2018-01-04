@@ -59,6 +59,13 @@ namespace TheOneHRDAL
             
         }
 
+        public static int ExecuteCommand(string sql, params SqlParameter[] values)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+            cmd.Parameters.AddRange(values);
+            return cmd.ExecuteNonQuery();
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +105,16 @@ namespace TheOneHRDAL
             }
         }
 
+        public static DataTable GetDataTable(string sql, params SqlParameter[] values)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+            cmd.Parameters.AddRange(values);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
         /// <summary>
         /// return first row first column
         /// </summary>
@@ -120,6 +137,34 @@ namespace TheOneHRDAL
             finally
             {
                 Conn.Close();
+            }
+        }
+
+        public static int GetScalar(string sql, params SqlParameter[] values)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+            cmd.Parameters.AddRange(values);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            return result;
+        }
+
+        public static SqlDataReader GetReader(string sql, params SqlParameter[] values)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+            cmd.Parameters.AddRange(values);
+            SqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public static object GetValueByWhetherNull(object obj)
+        {
+            try
+            {
+                return obj == null ? (object)DBNull.Value : obj;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

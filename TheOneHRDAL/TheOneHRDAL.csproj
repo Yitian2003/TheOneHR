@@ -41,15 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config_countryService.cs" />
+    <Compile Include="Config_educated_degreeService.cs" />
     <Compile Include="Config_file_first_kindService.cs" />
     <Compile Include="Config_file_third_kindService.cs" />
     <Compile Include="Config_file_second_kindService.cs" />
+    <Compile Include="Config_goodatService.cs" />
     <Compile Include="Config_majorService.cs" />
     <Compile Include="Config_major_kindService.cs" />
+    <Compile Include="Config_nationService.cs" />
+    <Compile Include="Config_postService.cs" />
     <Compile Include="Config_question_first_kindService.cs" />
     <Compile Include="Config_question_second_kindService.cs" />
+    <Compile Include="Config_religionService.cs" />
+    <Compile Include="Config_specialityService.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Engage_interviewService.cs" />
     <Compile Include="Engage_major_releaseService.cs" />
+    <Compile Include="Engage_resumeService.cs" />
     <Compile Include="Engage_subjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys_rightService.cs" />

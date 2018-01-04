@@ -58,7 +58,6 @@
     <Compile Include="Engage_major_release.cs" />
     <Compile Include="Engage_resume.cs" />
     <Compile Include="Engage_subject.cs" />
-    <Compile Include="Human_file.cs" />
     <Compile Include="Sys_right.cs" />
     <Compile Include="Sys_role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
