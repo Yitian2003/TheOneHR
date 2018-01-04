@@ -1148,6 +1148,51 @@ namespace TheOneHRDAL
             }
 			
         }
-		
-	}
+
+        public static IList<Engage_resume> ResumeAdvSearch(int majorid, int resumestatus, string key, string beginTime, string endTime)
+        {
+
+            System.Text.StringBuilder sb = new StringBuilder();
+            sb.Append(" 1=1 ");
+            if (majorid != -1)
+            {
+                Engage_major_release release = Engage_major_releaseService.GetEngage_major_releaseByPostId(majorid);
+
+                sb.Append(" and Emr_no=" + release.Id);
+            }
+            if (resumestatus != -1)
+            {
+                sb.Append(" and Interview_status=" + resumestatus);
+            }
+            if (!string.IsNullOrEmpty(beginTime))
+            {
+                if (!string.IsNullOrEmpty(endTime))
+                {
+                    sb.Append(string.Format(" and Regist_time between '{0}' and '{1}'", beginTime + " 00:00:00", endTime + " 23:59:59"));
+                }
+                else
+                {
+                    sb.Append(string.Format("and Regist_time>'{0}'", beginTime + " 00:00:00"));
+
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(endTime))
+                {
+                    sb.Append(string.Format("and Regist_time<'{0}'", endTime + " 23:59:59"));
+                }
+            }
+
+            if (!string.IsNullOrEmpty(key))
+            {
+                sb.AppendFormat(" and Human_name like '%{0}%' or Human_telephone like '%{1}%' or Human_id_card like '%{2}%' or Human_history_record like '%{3}%'", key, key, key, key);
+            }
+
+            string strsql = "select * from Engage_resume where " + sb.ToString();
+            return GetEngage_resumesBySql(strsql);
+
+        }
+
+    }
 }

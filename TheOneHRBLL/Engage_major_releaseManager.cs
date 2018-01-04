@@ -34,5 +34,12 @@ namespace TheOneHRBLL
         {
             return Engage_major_releaseService.DelEngage_major_release(id) > 0;
         }
+
+
+        public static Engage_major_release GetEngage_major_releaseByPostId(int postid)
+        {
+            return Engage_major_releaseService.GetEngage_major_releaseByPostId(postid);
+        }
+
     }
 }

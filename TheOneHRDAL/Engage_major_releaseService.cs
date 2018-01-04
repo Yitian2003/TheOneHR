@@ -82,5 +82,18 @@ namespace TheOneHRDAL
             string sql = "delete from Engage_major_release where Id=" + id.ToString();
             return DBHelper.ExecuteNonQuery(sql);
         }
+
+        public static Engage_major_release GetEngage_major_releaseByPostId(int postid)
+        {
+            string sql = "select top 1 * from Engage_major_release where Cm_no=" + postid;
+            try
+            {
+                return GetEngage_major_releaseBySQL(sql)[0];
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

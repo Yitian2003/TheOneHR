@@ -177,7 +177,13 @@ namespace TheOneHRBLL
 			try{if (Pass_checkComment.ToString() == "0001-1-1 0:00:00") engage_resume.Pass_checkComment = null; else engage_resume.Pass_checkComment = Pass_checkComment;}catch{}
 			try{if (Pass_passComment.ToString() == "0001-1-1 0:00:00") engage_resume.Pass_passComment = null; else engage_resume.Pass_passComment = Pass_passComment;}catch{}
 		}
-		#endregion
+
+        public static IList<Engage_resume> ResumeAdvSearch(int majorid, int resumestatus, string key, string beginTime, string endTime)
+        {
+
+            return Engage_resumeService.ResumeAdvSearch(majorid, resumestatus, key, beginTime, endTime);
+        }
+        #endregion
     }
 }
 
