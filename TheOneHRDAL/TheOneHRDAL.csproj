@@ -56,6 +56,8 @@
     <Compile Include="Config_religionService.cs" />
     <Compile Include="Config_specialityService.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Engage_examService.cs" />
+    <Compile Include="Engage_exam_detailService.cs" />
     <Compile Include="Engage_interviewService.cs" />
     <Compile Include="Engage_major_releaseService.cs" />
     <Compile Include="Engage_resumeService.cs" />
