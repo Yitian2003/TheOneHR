@@ -72,6 +72,11 @@ namespace TheOneHRBLL
             return Engage_interviewService.GetEngage_interviewById(id);
         }
 
+        public static IList<Engage_interview> Engage_InterviewAdvSearch(int majorId, int resumeStatusId, string key, string beginTime, string endTime)
+        {
+            return Engage_interviewService.Engage_interviewAdvSearch(majorId, resumeStatusId, key, beginTime, endTime);
+        }
+
 		#region private Method
 		//Trans Add Method 
 		private static void TransData_AddEngage_interview(int Interview_amount,string Image_degree,string Native_language_degree,string Foreign_language_degree,string Response_speed_degree,string EQ_degree,string IQ_degree,string Multi_quality_degree,int Register_users_no,int Checker_users_no,DateTime Regist_time,DateTime Check_time,string Result,string Interview_comment,string Check_comment,int Check_status,int Er_no, Engage_interview engage_interview )

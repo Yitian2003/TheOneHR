@@ -19,5 +19,10 @@ namespace TheOneHRBLL
         {
             return Config_majorService.GetConfig_majorById(id);
         }
+
+        public static IList<Config_major> GetConfig_majorByKind(int kindId)
+        {
+            return Config_majorService.GetMajorByKindId(kindId);
+        }
     }
 }

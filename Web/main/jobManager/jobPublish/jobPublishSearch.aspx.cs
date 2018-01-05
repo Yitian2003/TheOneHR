@@ -15,7 +15,7 @@ public partial class main_jobManager_jobPublishSearch : System.Web.UI.Page
     protected void linkReqJob_Command(object sender, CommandEventArgs e)
     {
         int id = int.Parse(e.CommandArgument.ToString());
-        Response.Redirect("xxx.aspx?id=" + id);
+        Response.Redirect("/main/jobManager/resumeManager/resumeRigster.aspx?postid=" + id);
     }
 
     protected void gvJobList_RowDataBound(object sender, GridViewRowEventArgs e)

@@ -51,5 +51,11 @@ namespace TheOneHRDAL
                 return null;
             }
         }
+
+        public static IList<Config_major> GetMajorByKindId(int kindId)
+        {
+            string sql = "select * from Config_major where Cmk_no=" + kindId.ToString();
+            return GetConfig_majorBySQL(sql);
+        }
     }
 }

@@ -27,6 +27,10 @@
         #txtArchiveAge {
             width: 80px;
         }
+        #arcArchiveForm {
+            height: 2471px;
+            margin-bottom: 0px;
+        }
     </style>
 
 </head>
@@ -35,7 +39,7 @@
     <div id="man_zone" style="height: auto;">
         <form id="arcArchiveForm" runat="server">
             &nbsp;
-				<table width="99%" border="0" align="center" cellpadding="3"
+				<table border="0" align="center" cellpadding="3"
                     cellspacing="1" class="table_style">
                     <thead>
                         <tr>

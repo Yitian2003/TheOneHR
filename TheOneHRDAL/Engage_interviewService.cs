@@ -443,6 +443,49 @@ namespace TheOneHRDAL
             }
 			
         }
+
+        public static IList<Engage_interview> Engage_interviewAdvSearch(int majorId, int resumeStatusId, string key, string startTime, string endTime)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(" 1=1 ");
+            if(majorId != -1)
+            {
+                sb.Append(" and majorId=" + majorId);
+            }
+
+            if(resumeStatusId != -1)
+            {
+                sb.Append(" and Check_status=" + resumeStatusId);
+            }
+
+            if (!string.IsNullOrEmpty(key))
+            {
+                sb.AppendFormat(" and Human_name like '%{0}%'", key.Trim());
+            }
+
+            if (!string.IsNullOrEmpty(startTime))
+            {
+                if (!string.IsNullOrEmpty(endTime))
+                {
+                    sb.Append(string.Format(" and Regist_time between '{0}' and '{1}'", startTime + " 00:00:00", endTime + " 23:59:59"));
+
+                }
+                else
+                {
+                    sb.Append(string.Format(" and Regist_time < '{0}'", startTime + " 00:00:00"));
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(endTime))
+                {
+                    sb.AppendFormat(" and Regist_time < '{0}'", endTime + " 23:59:59");
+                }
+            }
+
+            string sql = "select Id, Interview_amount, Image_degree, Native_language_degree, Foreign_language_degree, Response_speed_degree, EQ_degree, IQ_degree, Multi_quality_degree, Register_users_no, Checker_users_no, Regist_time, Check_time, Er_no, Result, Interview_comment, Check_comment, Check_status, Human_name, majorId, Major_name from V_EngageInterview where " + sb.ToString();
+            return GetEngage_interviewsBySql(sql);
+        }
 		
 	}
 }

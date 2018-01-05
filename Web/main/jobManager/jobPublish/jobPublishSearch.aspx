@@ -59,7 +59,7 @@
                     <asp:BoundField DataField="Deadline" HeaderText="截至时间" SortExpression="Deadline" DataFormatString="{0:d}" />
                     <asp:TemplateField HeaderText="申请职位">
                         <ItemTemplate>
-                            <asp:LinkButton ID="linkReqJob" runat="server" CommandArgument='<%# Eval("Id") %>' Text="申请职位" OnCommand="linkReqJob_Command"></asp:LinkButton>
+                            <asp:LinkButton ID="linkReqJob" runat="server" CommandArgument='<%# Eval("Cm.Id") %>' Text="申请职位" OnCommand="linkReqJob_Command"></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

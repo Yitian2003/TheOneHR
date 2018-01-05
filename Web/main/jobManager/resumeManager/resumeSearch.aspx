@@ -15,9 +15,9 @@
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
-		<link rel="stylesheet" href="/Web/css/common.css"
+		<link rel="stylesheet" href="/css/common.css"
 			type="text/css" />
-		<script type="text/javascript" src="/Web/cal/calenderJS.js"></script>
+		<script type="text/javascript" src="/cal/calenderJS.js"></script>
 		<style type="text/css">
 			table td{
 				font-size:12px;
@@ -121,7 +121,7 @@
 				</table>
 				<br />
                 <asp:GridView ID="gvResume" runat="server" align="center" AllowPaging="True" AutoGenerateColumns="False"
-                    CssClass="GridView"  PageSize="5" Width="99%" DataSourceID="odsResume" OnRowDataBound="gvResume_RowDataBound">
+                    CssClass="GridView"  PageSize="5" Width="99%" DataSourceID="odsResume" >
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="序号" SortExpression="Id" />
                         <asp:BoundField DataField="Human_name" HeaderText="姓名" SortExpression="Human_name" />

@@ -1,10 +1,9 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="resumeConfirm.aspx.cs" Inherits="main_jobManager_resumeManager_resumeConfirm" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 	<head>
 
-		<title>ç®€åŽ†åˆå®¡</title>
+		<title>ÃæÊÔµÇ¼Ç</title>
 
 		<meta name="author" content="Wk">
 		<meta name="robots" content="all">
@@ -17,267 +16,297 @@
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
-		<link rel="stylesheet" href="/css/common.css"
-			type="text/css" />
 		<style type="text/css">
 			table td{
 				font-size:12px;
 			}
-			.inputText{
+			.input_text{
 				width:80px;
 			}
 		</style>
-		<link rel="stylesheet" href="/css/common.css"
+		<link rel="stylesheet" href="/Web/css/common.css"
 			type="text/css" />
+		
+
+
+		<script type="text/javascript">
+		
+		function toBack(){
+			window.history.go(-1);
+			
+		}
+	
+	
+	</script>
 	</head>
 
 	<body>
 
-<form id="engResumehandleForm" runat="server">
-			<div id="man_zone" style="height: 667px;">
+		<form name="engFaceresultForm" method="post" action="/TheOneHR/engFaceresult.do" enctype="multipart/form-data">
+			<input type="hidden" name="op" value="doAddFace" />
+			<input type="hidden" name="url" value="/Web/engFaceresult.do" />
+			<input type="hidden" name="engFaceresult.engResume.resId" value="9">
+			<input type="hidden" name="engFaceresult.sysUser.userId" value="1">
+			<input type="hidden" name="engFaceresult.faceFaceDate" value="2009-10-01">
+			<div id="man_zone" style="height: 500px;">
 				<table width="99%" border="0" align="center" cellpadding="3"
 					cellspacing="1" class="table_style">
 					<thead>
 						<tr>
 							<td class="left_title_header" colspan="8">
-								ç®€åŽ†åˆå®¡
+								ÃæÊÔµÇ¼Ç
 							</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td width="12%" class="left_title_1" style="text-align: center;">
-								èŒä½ç±»åž‹
+								Ö°Î»ÀàÐÍ
 							</td>
 							<td width="13%" class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>Èí¼þ±à³Ì</span>
 							</td>
 							<td width="12%" class="left_title_1" style="text-align: center;">
-								èŒä½åç§°
+								Ö°Î»Ãû³Æ
 							</td>
 							<td width="13%" class="left_title_2" style="text-align: left;">
-								<span></span>
-                                <asp:Label ID="lblMajor" runat="server"></asp:Label>
+								<span>Èí¼þ¼Ü¹¹Ê¦</span>
 							</td>
 							<td width="12%" class="left_title_1" style="text-align: center;">
-								æ‹›è˜ç±»åž‹
+								ÕÐÆ¸ÀàÐÍ
 							</td>
 							<td width="13%" class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblJobType" runat="server"></asp:Label></span></td>
+								<span>Éç»áÕÐÆ¸</span>
+							</td>
 							<td width="25%" class="left_title_2" style="text-align: center;"
 								colspan="2" rowspan="4">
 								<img id="showImg" style="width: 100px;height: 100px"
-									 src="/pic/091030101845593.jpg">
+									 src="/Web/pic/null">
 							</td>
 						</tr>
 
 						<tr>
 							<td class="left_title_1" style="text-align: center;">
-								å§“å
+								ÐÕÃû
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblName" runat="server"></asp:Label></span></td>
-							<td class="left_title_1" style="text-align: center;">
-								æ€§åˆ«
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>sss</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								EMAIL
+								ÐÔ±ð
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>?</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								ÉúÈÕ
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>1989-10-10</span>
 							</td>
 						</tr>
 
 						<tr>
 							<td class="left_title_1" style="text-align: center;">
-								ç”µè¯
+								Ãñ×å
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>?</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								æ‰‹æœº
+								×Ú½ÌÐÅÑö
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>???</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								é‚®ç¼–
+								ÕþÖÎÃæÃ²
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>??</span>
 							</td>
 						</tr>
 
 						<tr>
 							<td class="left_title_1" style="text-align: center;">
-								å›½ç±
+								Éí·ÝÖ¤ºÅÂë
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblCoun" runat="server"></asp:Label></span></td>
-							<td class="left_title_1" style="text-align: center;">
-								å‡ºç”Ÿåœ°
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>123456789011111</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								ç”Ÿæ—¥
+								ÄêÁä
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>20</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								³öÉúµØ
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>xxx</span>
 							</td>
 						</tr>
 
 						<tr>
 							<td class="left_title_1" style="text-align: center;">
-								æ°‘æ—
+								½ÌÓýÄêÏÞ
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>4</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								å®—æ•™ä¿¡ä»°
+								Ñ§Àú×¨Òµ
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblregine" runat="server"></asp:Label></span></td>
-							<td class="left_title_1" style="text-align: center;">
-								æ”¿æ²»é¢è²Œ
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
+								<span>???</span>
 							</td>
 							<td class="left_title_1" style="text-align: center;">
-								æ³¨å†Œæ—¶é—´
+								Ð½³êÒªÇó
 							</td>
 							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblRegTime" runat="server"></asp:Label></span></td>
+								<span>2000</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								×¢²áÊ±¼ä
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>2009-10-01</span>
+							</td>
 						</tr>
-
 
 						
 						<tr>
 							<td class="left_title_1" style="text-align: center;">
-								èº«ä»½è¯å·ç 
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center;">
-								å¹´é¾„
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center;">
-								æ¯•ä¸šå­¦æ ¡
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-							</td>
-							<td class="left_title_1" style="text-align: center;">
-								å­¦åŽ†
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lbleducation" runat="server"></asp:Label></span>
-							</td>
-						</tr>
-
-
-						
-						<tr>
-							<td class="left_title_1" style="text-align: center;">
-								æ•™è‚²å¹´é™
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center;">
-								å­¦åŽ†ä¸“ä¸š
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblspecial" runat="server"></asp:Label></span></td>
-							<td class="left_title_1" style="text-align: center;">
-								è–ªé…¬è¦æ±‚
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center;">
-								å®¡æ ¸æ—¶é—´
-							</td>
-							<td class="left_title_2" style="text-align: left;">
-								<span>
-                                    <asp:Label ID="lblConfirmTime" runat="server"></asp:Label></span></td>
-						</tr>
-
-						<tr>
-						<td class="left_title_1" style="text-align: center; height: 20px;">
-								ç‰¹é•¿
-							</td>
-							<td class="left_title_2" style="text-align: left; height: 20px;">
-							<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center; height: 20px;">
-								çˆ±å¥½
-							</td>
-							<td class="left_title_2" style="text-align: left; height: 20px;">
-								<span></span>
-							</td>
-							<td class="left_title_1" style="text-align: center; height: 20px;">
-								ä½å€
-							</td>
-							<td class="left_title_2" style="text-align: left; height: 20px;" colspan="4">
-								<span></span>
-							</td>
-						</tr>
-
-
-						
-						<tr>
-							<td class="left_title_1" style="text-align: center;">
-								ä¸ªäººå±¥åŽ†
+								¸öÈËÂÄÀú
 							</td>
 							<td class="left_title_2" style="text-align: left;" colspan="7">
-
-								<textarea rows="3" cols="80" class="input_textarea" readonly="readonly" ></textarea>
-
+								<span>sss</span>
 							</td>
 						</tr>
 						<tr>
-							<td class="left_title_1" style="text-align: center; height: 59px;">
-								å¤‡æ³¨
-							</td>
-							<td class="left_title_2" style="text-align: left; height: 59px;" colspan="7">
-
-								<textarea rows="3" cols="80" class="input_textarea" readonly="readonly" ></textarea>
-
-							</td>
-						</tr>
-							<tr>
 							<td class="left_title_1" style="text-align: center;">
-								ç­›é€‰æŽ¨èæ„è§
+								±¸×¢
 							</td>
 							<td class="left_title_2" style="text-align: left;" colspan="7">
-								<textarea name="engResumehandle.resHandleAttitude" cols="80" rows="3" class="input_textarea" id="txtSuggest" runat="server"></textarea>
+								<span>sss</span>
 							</td>
 						</tr>
 						<tr>
-							<td class="left_title_1" style="text-align: center;" colspan="4" >
-                                <asp:RadioButton ID="rdOK" runat="server" Text="å»ºè®®é¢è¯•" Checked="True" GroupName="rdIntreview" /></td>
-							<td class="left_title_1" style="text-align: left;" colspan="4">
-                                <asp:RadioButton ID="rdNo" runat="server" Text="åˆ é™¤ç®€åŽ†" GroupName="rdIntreview" /></td>
+							<td class="left_title_1" style="text-align: center;">
+								É¸Ñ¡ÍÆ¼öÒâ¼û
+							</td>
+							<td class="left_title_2" style="text-align: left;" colspan="7">
+								<span></span>
+							</td>
 						</tr>
 						
+						
+						
+						<tr>
+							<td class="left_title_1" style="text-align: center;">
+								ÃæÊÔ´ÎÊý
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>µÚ1´Î</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								ÐÎÏóÆÀ¼Û
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceVisualize" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								¿Ú²ÅÆÀ¼Û
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceEloquence" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+							<td width="12%" class="left_title_1" style="text-align: center;">
+								ÍâÓï¿ÚÓïÄÜÁ¦
+							</td>
+							<td width="13%" class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceEnglish" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="left_title_1" style="text-align: center;">
+								Ó¦±äÄÜÁ¦
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.facePower" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								EQ
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceEq" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								IQ
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceIq" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								×ÛºÏËØÖÊ
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<select name="engFaceresult.faceDiathesis" class="input_text"><option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option></select>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="left_title_1" style="text-align: center;">
+								ÃæÊÔÈË
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>admin</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+								ÃæÊÔÊ±¼ä
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+								<span>2009-10-01</span>
+							</td>
+							<td class="left_title_1" style="text-align: center;">
+							ÍÆ¼öÈË
+							</td>
+							<td class="left_title_2" style="text-align: left;" >
+							 <span>admin</span>
+							</td>
+							
+							<td class="left_title_1" style="text-align: center;">
+							ÍÆ¼öÊ±¼ä
+							</td>
+							<td class="left_title_2" style="text-align: left;">
+							<span>2009-10-01</span>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="left_title_1" style="text-align: center;">
+								ÃæÊÔÆÀ¼Û
+							</td>
+							<td class="left_title_2" style="text-align: left;" colspan="7">
+								<textarea name="engFaceresult.faceAppraise" cols="80" rows="3" class="input_textarea"></textarea>
+							</td>
+						</tr>
 						
 						
 					</tbody>
@@ -285,16 +314,15 @@
 						<tr bgcolor="#FFFFFF">
 							<td class="left_title_footer" colspan="8"
 								style="text-align: center;">
-                                <asp:Button ID="btnSubmit" Text="æäº¤" CssClass="input_button" runat="server" OnClick="btnSubmit_Click" />
-								<input type="button" value="è¿”å›ž" class="input_button" onclick="window.history.go(-1);"/>
+								<input type="button" value="Ìá½»" class="input_button" onclick="jsCheckForm();"/>
+								<input type="reset" value="Çå³ý" class="input_button" />
 							</td>
 						</tr>
 					</tfoot>
 				</table>
 			</div>
 		</form>
+
 	</body>
-
-
 </html>
 

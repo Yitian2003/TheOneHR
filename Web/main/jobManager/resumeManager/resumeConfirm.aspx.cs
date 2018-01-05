@@ -17,7 +17,7 @@ public partial class main_jobManager_resumeManager_resumeConfirm : PageBase
     {
         if (!IsPostBack)
         {
-            if (Request["resumeid"]!=null)
+            if (Request["resumeid"] != null)
             {
                 int resumeId = int.Parse(this.RequestString("resumeid"));
                 Engage_resume resume = Engage_resumeManager.GetEngage_resumeById(resumeId);
@@ -46,31 +46,31 @@ public partial class main_jobManager_resumeManager_resumeConfirm : PageBase
             }
         }
     }
-    protected void btnSubmit_ServerClick(object sender, EventArgs e)
+
+
+    protected void btnSubmit_Click(object sender, EventArgs e)
     {
         if (Request["resumeid"] != null)
         {
-            int resumeId = int.Parse(this.RequestString("resumeid"));
-            Engage_resume resume = Engage_resumeManager.GetEngage_resumeById(resumeId);
-            
-            if (rdOK.Checked)
-            {
-                //简历筛选推荐意见
-                resume.Recomandation = txtSuggest.Value.Trim();
-                //简历筛选时间
-                resume.Check_time = DateTime.Now;
-                //简历筛选人
-                resume.Checker_users_no = this.CurrentUser.Id;
+            int resumeId = int.Parse(RequestString("resumeid"));
 
-                resume.Interview_status = 1; //状态更新为"面试登记"
+            Engage_resume resume = Engage_resumeManager.GetEngage_resumeById(resumeId);
+
+            if (resume != null && rdOK.Checked)
+            {
+                resume.Recomandation = txtSuggest.Value.Trim();
+                resume.Check_time = DateTime.Now;
+                resume.Checker_users_no = CurrentUser.Id;
+                resume.Interview_status = 1;
+
                 try
                 {
                     Engage_resumeManager.ModifyEngage_resume(resume);
                     Response.Redirect("resumeSearch.aspx");
                 }
-                catch
+                catch (Exception ex)
                 {
-                    this.Alert("修改失败!");
+                    Alert(ex.Message);
                 }
             }
             else if (rdNo.Checked)
@@ -82,8 +82,10 @@ public partial class main_jobManager_resumeManager_resumeConfirm : PageBase
                 }
                 catch
                 {
-                    this.Alert("修改失败!");
+                    Alert("修改失败");
                 }
+
+
             }
         }
     }

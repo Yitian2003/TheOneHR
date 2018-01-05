@@ -60,20 +60,20 @@ public partial class main_jobManager_resumeManager_resumeSearch : System.Web.UI.
 
         return result;
     }
-    protected void gvResume_RowDataBound(object sender, GridViewRowEventArgs e)
-    {
-        if (e.Row.RowType == DataControlRowType.DataRow)
-        {
-            LinkButton linkModify = e.Row.FindControl("linkModify") as LinkButton;
-            if (linkModify != null)
-            {
-                if (linkModify.Text != "简历初审")
-                {
-                    linkModify.OnClientClick = "return false";
-                }
-            }
-        }
-    }
+    //protected void gvResume_RowDataBound(object sender, GridViewRowEventArgs e)
+    //{
+    //    if (e.Row.RowType == DataControlRowType.DataRow)
+    //    {
+    //        LinkButton linkModify = e.Row.FindControl("linkModify") as LinkButton;
+    //        if (linkModify != null)
+    //        {
+    //            if (linkModify.Text != "简历初审")
+    //            {
+    //                linkModify.OnClientClick = "return false";
+    //            }
+    //        }
+    //    }
+    //}
     protected void linkModify_Command(object sender, CommandEventArgs e)
     {
         
@@ -85,7 +85,7 @@ public partial class main_jobManager_resumeManager_resumeSearch : System.Web.UI.
         }
         else if (resumeStatus == "面试登记")
         {
-            Response.Redirect("/main/jobManager/interviewManager/interviewReg.aspx?resumeid="+id);
+            Response.Redirect("/main/jobManager/interviewManager/interviewReg.aspx?resumeid=" + id);
         }
 
     }
