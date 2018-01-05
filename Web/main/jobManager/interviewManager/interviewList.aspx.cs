@@ -104,15 +104,12 @@ public partial class main_jobManager_interviewManager_interviewList : System.Web
 
             if(linkConfirm != null)
             {
-                if(checkStatus != 9)
+                if(checkStatus != 1)
                 {
                     linkConfirm.OnClientClick = "return false";
                     linkConfirm.Text = "已审核";
                 }
-                else
-                {
-                    linkConfirm.Text = "待审核";
-                }
+                
             }
         }
     }
