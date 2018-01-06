@@ -90,5 +90,11 @@ namespace TheOneHRDAL
             string sql = string.Format("select [Id], [Cqsk_No], [Register_users_No], [Changer_users_No], [Regist_time], [Change_time], [Derivation], [Context], [Key_a], [Key_b], [Key_c], [Key_d], [Key_e], [Correct_key] from v_EngageSubject where {0}", condition);
             return GetEngage_subjectBySQL(sql);
         }
+
+        public static DataTable GetEngageSubjectList()
+        {
+            string sql = "select * from V_ExamSubject";
+            return DBHelper.GetDataTable(sql);
+        }
     }
 }

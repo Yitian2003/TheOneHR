@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+	<head>
+
+		<title>考试出题</title>
+
+		<meta name="author" content="Wk">
+		<meta name="robots" content="all">
+		<meta name="keywords" content="keyword">
+		<meta name="description" content="Wk Java Server Pages">
+		<meta http-equiv="keywords" content="keyword">
+		<meta http-equiv="description" content="Wk Java Server Pages">
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<meta http-equiv="windows-Target" content="_top">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" href="/Web/css/common.css"
+			type="text/css" />
+		<style type="text/css">
+			table td{
+				font-size:12px;
+			}
+			.inputText{
+				width:100px;
+			}
+		</style>
+
+		<!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+		<script type="text/javascript" src="json.js"></script>
+		<script type="text/javascript">
+	
+
+		function toBack(){
+			window.history.go(-1);
+		}
+		
+		
+		
+			
+
+	</script>
+	</head>
+
+	<body>
+		<div id="man_zone">
+		<form name="engExamForm" method="post" action="/TheOneHR/engExam.do">
+            &nbsp;<table width="70%" border="0" align="center" cellpadding="3"
+				cellspacing="1" class="table_style">
+				<thead>
+					<tr>
+						<td class="left_title_header" colspan="4">
+							考试出题
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="25%" class="left_title_1" style="text-align: center;">
+							职位分类
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							销售
+						</td>
+						<td width="25%" class="left_title_1" style="text-align: center;">
+							职位名称
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							经理
+						</td>
+					</tr>
+					<tr>
+						<td width="25%" class="left_title_1" style="text-align: center;">
+							登记
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							admin
+						</td>
+						<td width="25%" class="left_title_1" style="text-align: center;">
+							登记时间
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							2009-10-05
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			
+			<table width="99%" border="0" align="center" cellpadding="3"
+				cellspacing="1" class="table_style">
+				<thead>
+					<tr>
+						<td style="width:25%" class="left_title_header">
+							I级分类
+						</td>
+						<td style="width:25%" class="left_title_header">
+							II级分类
+						</td>
+						<td style="width:25%" class="left_title_header">
+							可用试题数量
+						</td>
+						<td style="width:25%" class="left_title_header">
+							出题数量
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+				
+					<tr>
+						<td class="left_title_2" style="text-align: center;" rowspan="2">
+							市场类
+						</td>
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+					</tr>
+						
+						
+							<tr>
+								<td class="left_title_2" style="text-align: center;">
+									客户经理
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									6<input type="hidden" id="客户经理" value="6" />
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									<input type="text" name="4" onblur="checkNum(this,'客户经理','d4' );" class="input_text"  onkeydown="return checkNumkey(this)" maxlength="3" />
+									<div id="d4" style="position:absolute;display: none"  ><font color="red">*</font></div>
+								</td>
+							</tr>
+					
+					<tr>
+						<td class="left_title_2" style="text-align: center;" rowspan="2">
+							综合类
+						</td>
+						
+					
+						
+					
+						
+					
+						
+					
+					</tr>
+						
+						
+					
+						
+							<tr>
+								<td class="left_title_2" style="text-align: center;">
+									法律
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									1<input type="hidden" id="法律" value="1" />
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									<input type="text" name="5" onblur="checkNum(this,'法律','d5' );" class="input_text"  onkeydown="return checkNumkey(this)" maxlength="3" />
+									<div id="d5" style="position:absolute;display: none"  ><font color="red">*</font></div>
+								</td>
+							</tr>
+					
+					<tr>
+						<td class="left_title_2" style="text-align: center;" rowspan="4">
+							基础知识类
+						</td>
+						
+					
+					</tr>
+						
+						
+					
+						
+					
+						
+							<tr>
+								<td class="left_title_2" style="text-align: center;">
+									基础常识
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									2<input type="hidden" id="基础常识" value="2" />
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									<input type="text" name="6" onblur="checkNum(this,'基础常识','d6' );" class="input_text"  onkeydown="return checkNumkey(this)" maxlength="3" />
+									<div id="d6" style="position:absolute;display: none"  ><font color="red">*</font></div>
+								</td>
+							</tr>
+						
+					
+						
+							<tr>
+								<td class="left_title_2" style="text-align: center;">
+									数字推理及运算
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									1<input type="hidden" id="数字推理及运算" value="1" />
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									<input type="text" name="7" onblur="checkNum(this,'数字推理及运算','d7' );" class="input_text"  onkeydown="return checkNumkey(this)" maxlength="3" />
+									<div id="d7" style="position:absolute;display: none"  ><font color="red">*</font></div>
+								</td>
+							</tr>
+						
+					
+						
+							<tr>
+								<td class="left_title_2" style="text-align: center;">
+									逻辑推理
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									11<input type="hidden" id="逻辑推理" value="11" />
+								</td>
+								<td class="left_title_2" style="text-align: center;">
+									<input type="text" name="8" onblur="checkNum(this,'逻辑推理','d8' );" class="input_text"  onkeydown="return checkNumkey(this)" maxlength="3" />
+									<div id="d8" style="position:absolute;display: none"  ><font color="red">*</font></div>
+								</td>
+							</tr>
+					
+					<tr>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							&nbsp;
+						</td>
+						<td width="25%" class="left_title_1" style="text-align: center;">
+							答题限时(分钟)
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							<input type="text" name="engExam.examAstrictTime" maxlength="3" value="" onkeydown="return checkNumkey(this)" class="input_text">
+						</td>
+						<td width="25%" class="left_title_2" style="text-align: center;">
+							&nbsp;
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr bgcolor="#FFFFFF">
+						<td class="left_title_1" colspan="4" style="text-align: center;">
+							<input type="button" value="出卷" class="input_button" onclick="location.href='examTestList.htm'"/>
+							<input type="button" value="返回" onclick="window.history.go(-1);" class="input_button"/>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			</form>
+		</div>
+	</body>
+
+</html>
+

@@ -53,6 +53,8 @@
     <Compile Include="Config_question_second_kindManager.cs" />
     <Compile Include="Config_religionManager.cs" />
     <Compile Include="Config_specialityManager.cs" />
+    <Compile Include="Engage_answerManager.cs" />
+    <Compile Include="Engage_answer_detailManager.cs" />
     <Compile Include="Engage_examManager.cs" />
     <Compile Include="Engage_exam_detailManager.cs" />
     <Compile Include="Engage_interviewManager.cs" />

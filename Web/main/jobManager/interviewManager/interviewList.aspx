@@ -136,7 +136,7 @@
                     <asp:BoundField DataField="Regist_time" HeaderText="面试时间" SortExpression="Regist_time" />
                     <asp:TemplateField HeaderText="操作">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkConfirm" runat="server" CommandArgument='<%# Eval("Id") %>' OnCommand="LinkConfirm_Command">审核</asp:LinkButton>
+                            <asp:LinkButton ID="LinkConfirm" runat="server" CommandArgument='<%# Eval("Id") %>' OnCommand="LinkConfirm_Command">待审核</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

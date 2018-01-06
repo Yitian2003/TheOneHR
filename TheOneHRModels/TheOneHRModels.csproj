@@ -54,6 +54,8 @@
     <Compile Include="Config_question_second_kind.cs" />
     <Compile Include="Config_religion.cs" />
     <Compile Include="Config_speciality.cs" />
+    <Compile Include="Engage_answer.cs" />
+    <Compile Include="Engage_answer_detail.cs" />
     <Compile Include="Engage_exam.cs" />
     <Compile Include="Engage_exam_detail.cs" />
     <Compile Include="Engage_interview.cs" />

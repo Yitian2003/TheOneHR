@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheOneHRDAL;
 using TheOneHRModels;
+using System.Data;
 
 namespace TheOneHRBLL
 {
@@ -62,6 +63,12 @@ namespace TheOneHRBLL
             }
             return Engage_subjectService.SearchEngage_subjectAdv(condition);
         }
-       
+
+        public static DataTable GetEngageSubjectList()
+        {
+            return Engage_subjectService.GetEngageSubjectList();
+        }
+
+
     }
 }

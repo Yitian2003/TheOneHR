@@ -343,5 +343,10 @@ namespace TheOneHRDAL
 			
         }
 		
+        public static DataTable GetEngageExamList()
+        {
+            string sql = "select * from V_ExamList";
+            return DBHelper.GetDataTable(sql);
+        }
 	}
 }

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using TheOneHRDAL;
 using TheOneHRModels;
+using System.Data;
 
 namespace TheOneHRBLL
 {
@@ -72,9 +73,14 @@ namespace TheOneHRBLL
             return Engage_examService.GetEngage_examById(id);
         }
 
-		#region private Method
-		//Trans Add Method 
-		private static void TransData_AddEngage_exam(string Exam_number,int Register_users_no,DateTime Regist_time,int Limite_time,int Emr_no, Engage_exam engage_exam )
+        public static DataTable GetEngageExamList()
+        {
+            return Engage_examService.GetEngageExamList();
+        }
+
+        #region private Method
+        //Trans Add Method 
+        private static void TransData_AddEngage_exam(string Exam_number,int Register_users_no,DateTime Regist_time,int Limite_time,int Emr_no, Engage_exam engage_exam )
         {
 
 			try{if (Exam_number.ToString() == "0001-1-1 0:00:00") engage_exam.Exam_number = null; else engage_exam.Exam_number = Exam_number;}catch{}
