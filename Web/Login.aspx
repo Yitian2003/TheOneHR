@@ -4,7 +4,7 @@
 <html>
 
 	<head>
-
+        <%--<--!-->--%>
 		<title>人力资源管理系统</title>
 		<%--<script type="text/javascript">
 		function doLogin(){
